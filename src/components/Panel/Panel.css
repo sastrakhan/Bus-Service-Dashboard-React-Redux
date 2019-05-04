@@ -1,0 +1,16 @@
+.panel {
+  background-color: white;
+  padding: 1.5rem;
+  max-width: 320px;
+  _margin: 1rem auto;
+  border: 1px solid rgb(219, 219, 219);
+  min-width: 500px;
+}
+
+.panel--md {
+  max-width: 600px;
+}
+
+.panel--lg {
+  max-width: 900px;
+}
