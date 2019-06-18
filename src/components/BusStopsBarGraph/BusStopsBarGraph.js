@@ -29,9 +29,9 @@ class BusStopBarGraph extends Component {
     }
 
     render() {
-        const { people } = this.props;
+        const { busInfo } = this.props;
         let chartData = [];
-        people.map((busStop, index) => (
+        busInfo.map((busStop, index) => (
             chartData.push({ x: this.createLabel(busStop.cross_street, busStop.stop_id), y: busStop.boardings, label: busStop.boardings.toString() })
         ));
         chartData = chartData.splice(0, 4);
@@ -60,9 +60,9 @@ class BusStopBarGraph extends Component {
     }
 }
 
-export const mapStateToProps = ({ busData: { freqStops, hasLoadedPeople } }) => ({
-    people: freqStops,
-    hasLoadedPeople,
+export const mapStateToProps = ({ busData: { freqStops, hasLoadedbusInfo } }) => ({
+    busInfo: freqStops,
+    hasLoadedbusInfo,
 });
 
 export const mapDispatchToProps = {

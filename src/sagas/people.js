@@ -54,7 +54,7 @@ export function* getRoutesWithMostStopsRequest(actionInput) {
     }
 }
 
-export default function* peopleSaga() {
+export default function* busInfoSaga() {
     yield takeEvery(getBusStops.REQUEST, getBusStopsRequest);
     yield takeEvery(getStopsWithMostRoutes.REQUEST, getStopsWithMostRoutesRequest);
     yield takeEvery(getRoutesWithMostStops.REQUEST, getRoutesWithMostStopsRequest);

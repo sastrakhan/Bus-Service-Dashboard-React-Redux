@@ -16,7 +16,7 @@ class RouteTable extends Component  {
         const { routes } = this.props;
 
         return routes.map(route => (
-            <div key={route.RouteNumber} className="person">
+            <div key={route.RouteNumber} className="bus">
                 <h4> #{route.RouteNumber}</h4>
                 <div className="bio">Total Stops:{route.TotalStops}</div>
             </div>
@@ -24,24 +24,24 @@ class RouteTable extends Component  {
     }
 
     render() {
-        const { hasLoadedPeople } = this.props;
-        if (hasLoadedPeople === false) {
+        const { hasLoadedbusInfo } = this.props;
+        if (hasLoadedbusInfo === false) {
             return <Loading className="loading" color="#14233c" />;
         }
         return (
             <div className="grid-item">
                 <Panel size="lg">
                     <center><h3>Routes with most Stops</h3></center>
-                    <div className="people-list">{this.showUsers()}</div>
+                    <div className="busInfo-list">{this.showUsers()}</div>
                 </Panel>
             </div>
         );
     }
  };
 
-export const mapStateToProps = ({ busData: { routesList, hasLoadedPeople } }) => ({
+export const mapStateToProps = ({ busData: { routesList, hasLoadedbusInfo } }) => ({
     routes: routesList,
-    hasLoadedPeople,
+    hasLoadedbusInfo,
 });
 
 export const mapDispatchToProps = {

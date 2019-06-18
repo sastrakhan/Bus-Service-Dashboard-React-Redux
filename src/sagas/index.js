@@ -1,9 +1,9 @@
 import { fork } from 'redux-saga/effects';
 
-import peopleSaga from './people';
+import busInfoSaga from './busInfo';
 
 function* rootSaga() {
-  yield fork(peopleSaga);
+  yield fork(busInfoSaga);
 }
 
 export default rootSaga;

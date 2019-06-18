@@ -1,4 +1,4 @@
-.people-list {
+.busInfo-list {
   display: grid;
   grid-gap: 1rem;
   grid-template-columns: repeat(auto-fill, minmax(150px, auto));
@@ -6,7 +6,7 @@
   margin-bottom: 1rem;
 }
 
-.person {
+.bus {
   background-color: #14233c;
   border-radius: 4px;
   color: white;
@@ -17,12 +17,12 @@
   white-space: nowrap;
 }
 
-.person:hover {
+.bus:hover {
   background-color: #1e3255;
   transform: scale(1.05);
 }
 
-.person>.avatar {
+.bus>.avatar {
   border-radius: 50%;
   display: block;
   height: 50px;

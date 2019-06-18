@@ -5,8 +5,6 @@ import {
 } from 'prop-types';
 
 import { Map as LeafletMap, TileLayer, Marker, Popup } from 'react-leaflet';
-
-import { getPeople } from '../../actions';
 import Panel from '../Panel';
 
 
@@ -52,8 +50,8 @@ class BusMap extends Component {
         ));
 
         //const mapCenter = [chartData[0].latitude, chartData[0].longitude];
-        const { hasLoadedPeople } = this.props;
-        if (hasLoadedPeople === false) {
+        const { hasLoadedbusInfo } = this.props;
+        if (hasLoadedbusInfo === false) {
             return <Loading className="loading" color="#14233c" />;
         }
 
@@ -89,9 +87,9 @@ class BusMap extends Component {
     }
 }
 
-export const mapStateToProps = ({ busData: { list, hasLoadedPeople } }) => {
+export const mapStateToProps = ({ busData: { list, hasLoadedbusInfo } }) => {
     return {
-        hasLoadedPeople,
+        hasLoadedbusInfo,
         busStops: list
     };
 };

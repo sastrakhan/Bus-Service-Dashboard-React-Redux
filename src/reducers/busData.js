@@ -3,8 +3,8 @@ import { handleActions } from 'redux-actions';
 import { getBusStops, getStopsWithMostRoutes, getRoutesWithMostStops } from '../actions';
 
 const INITIAL_STATE = {
-    hasLoadedPeople: false,
-    errorGettingPeople: false,
+    hasLoadedbusInfo: false,
+    errorGettingbusInfo: false,
     amountRequested: 0,
     list: [],
     routesList: [],
@@ -18,18 +18,18 @@ const busData = (state = INITIAL_STATE, { type, payload }) => {
                 ...state,
                 amountRequested: payload,
                 list: [],
-                hasLoadedPeople: false,
-                errorGettingPeople: false,
+                hasLoadedbusInfo: false,
+                errorGettingbusInfo: false,
             };
         case getBusStops.FAILURE:
             return {
                 ...state,
-                errorGettingPeople: true,
+                errorGettingbusInfo: true,
             };
         case getBusStops.SUCCESS:
             return {
                 ...state,
-                hasLoadedPeople: true,
+                hasLoadedbusInfo: true,
                 list: payload.busstops,
             };
         case getStopsWithMostRoutes.REQUEST:
@@ -37,18 +37,18 @@ const busData = (state = INITIAL_STATE, { type, payload }) => {
                 ...state,
                 amountRequested: payload,
                 freqStops: [],
-                hasLoadedPeople: false,
-                errorGettingPeople: false,
+                hasLoadedbusInfo: false,
+                errorGettingbusInfo: false,
             };
         case getStopsWithMostRoutes.FAILURE:
             return {
                 ...state,
-                errorGettingPeople: true,
+                errorGettingbusInfo: true,
             };
         case getStopsWithMostRoutes.SUCCESS:
             return {
                 ...state,
-                hasLoadedPeople: true,
+                hasLoadedbusInfo: true,
                 freqStops: payload.freqStops,
             };
         case getRoutesWithMostStops.REQUEST:
@@ -56,18 +56,18 @@ const busData = (state = INITIAL_STATE, { type, payload }) => {
                 ...state,
                 amountRequested: payload,
                 RoutesList: [],
-                hasLoadedPeople: false,
-                errorGettingPeople: false,
+                hasLoadedbusInfo: false,
+                errorGettingbusInfo: false,
             };
         case getRoutesWithMostStops.FAILURE:
             return {
                 ...state,
-                errorGettingPeople: true,
+                errorGettingbusInfo: true,
             };
         case getRoutesWithMostStops.SUCCESS:
             return {
                 ...state,
-                hasLoadedPeople: true,
+                hasLoadedbusInfo: true,
                 routesList: payload.routes,
             };
         default:

@@ -66,8 +66,8 @@ class DatatablePage extends Component  {
     }
  };
 
-export const mapStateToProps = ({ busData: { list, hasLoadedPeople } }) => ({
-    hasLoadedPeople,
+export const mapStateToProps = ({ busData: { list, hasLoadedbusInfo } }) => ({
+    hasLoadedbusInfo,
     busStops: list
 });
 
